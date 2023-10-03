@@ -26,7 +26,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 // Importamos el archivo
-import HOME from "./Navigation";
+import HOME from "./Menu";
 
 type SectionProps = PropsWithChildren<{
   title: string;

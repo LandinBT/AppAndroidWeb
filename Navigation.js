@@ -21,7 +21,7 @@ export default class Navigation extends Component {
                 <Stack.Navigator>
                     <Stack.Screen name="Home" component={HOME} options={{headerShown: false}} />
                     <Stack.Screen name="Register" component={REGISTER} />
-                    <Stack.Screen name="Menu" component={MENU} options={{headerShown: false}}/>
+                    <Stack.Screen name="Menu" component={MENU} options={{headerShown:false }}/>
                 </Stack.Navigator>
             </NavigationContainer>
         );

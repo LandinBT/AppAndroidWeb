@@ -6,9 +6,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import TAB1 from './Tab1';
 import TAB2 from './Tab2';
 
-// esto va en el Tab.Screen  despues de component initialParams={{nombre:this.props.route.params.nombre}}
-// Borrar NavigationContainer
-
 export default class Menu extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +30,7 @@ export default class Menu extends Component {
           />
           <Tab.Screen name="Tab2" component={TAB2}
             options={{
-              tabBarLabel: 'Home',
+              tabBarLabel: 'Otro',
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons name="home" color={"red"} size={35} />
               ),

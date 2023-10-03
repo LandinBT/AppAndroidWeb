@@ -82,11 +82,11 @@ export default class Tab1 extends Component {
                 <Text style={{ color: "black", marginTop: 15 }}>{item.Telefono}</Text>
                 <View>
                   <Image
-                    style={{ width: 250, height: 70 }}
+                    style={{ width: 250, height: 70, marginTop:15 }}
                     source={{ uri: (item.Imagen) }}
                   />
                 </View>
-                <View style={{ width: 350, height: 3, backgroundColor: "gray", marginTop: 4 }}></View>
+                <View style={{ width: 350, height: 3, backgroundColor: "gray", marginTop:5 }}></View>
               </View>
             }
             keyExtractor={item => item.id}
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   },
   animatedBox: {
     //flex: 1,
-    backgroundColor: "#38C8EC",
+    backgroundColor: "#33CEFF",
     marginTop: 50,
     height: 700,
     width: 150,
