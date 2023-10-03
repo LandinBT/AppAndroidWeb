@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList, Button, TouchableWithoutFeedback } from 'react-native';
 import MenuDrawer from 'react-native-side-drawer';
+import DETAILSLIST from './DetailsList';
+import { NavigationContainer } from '@react-navigation/native';
 
 // ruta: https://www.npmjs.com/package/react-native-side-drawer
 // en TouchableOpacity style={styles.animatedBox}
@@ -36,6 +38,10 @@ export default class Tab1 extends Component {
       </View>
     );
   };
+
+  showDetails = (selectRegister) => {
+    this.props.navigation.navigate('DetailsList', { registro: selectRegister });
+  }
 
   componentDidMount() {
     var xhttp = new XMLHttpRequest();
@@ -76,18 +82,20 @@ export default class Tab1 extends Component {
           <FlatList
             data={this.state.dataSource}
             renderItem={({ item }) =>
-              <View style={{ height: 300 }}>
-                <Text style={{ color: "black", marginTop: 15 }}>{item.Nombre}</Text>
-                <Text style={{ color: "black", marginTop: 15 }}>{item.Profesion}</Text>
-                <Text style={{ color: "black", marginTop: 15 }}>{item.Telefono}</Text>
-                <View>
-                  <Image
-                    style={{ width: 250, height: 70, marginTop:15 }}
-                    source={{ uri: (item.Imagen) }}
-                  />
+              <TouchableWithoutFeedback onPress={() => this.showDetails(item)}>
+                <View style={{ height: 300 }}>
+                  <Text style={{ color: "black", marginTop: 15 }}>{item.Nombre}</Text>
+                  <Text style={{ color: "black", marginTop: 15 }}>{item.Profesion}</Text>
+                  <Text style={{ color: "black", marginTop: 15 }}>{item.Telefono}</Text>
+                  <View>
+                    <Image
+                      style={{ width: 250, height: 70, marginTop: 15 }}
+                      source={{ uri: (item.Imagen) }}
+                    />
+                  </View>
+                  <View style={{ width: 350, height: 3, backgroundColor: "gray", marginTop: 5 }}></View>
                 </View>
-                <View style={{ width: 350, height: 3, backgroundColor: "gray", marginTop:5 }}></View>
-              </View>
+              </TouchableWithoutFeedback>
             }
             keyExtractor={item => item.id}
           />

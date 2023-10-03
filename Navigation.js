@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HOME from './Home';
 import REGISTER from './Register';
 import MENU from './Menu';
+import DETAILSLIST from './DetailsList';
 
 export default class Navigation extends Component {
     constructor(props) {
@@ -22,6 +23,7 @@ export default class Navigation extends Component {
                     <Stack.Screen name="Home" component={HOME} options={{headerShown: false}} />
                     <Stack.Screen name="Register" component={REGISTER} />
                     <Stack.Screen name="Menu" component={MENU} options={{headerShown:false }}/>
+                    <Stack.Screen name="DetailsList" component={DETAILSLIST} options={{headerShown: false}}/>
                 </Stack.Navigator>
             </NavigationContainer>
         );
